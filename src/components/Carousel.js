@@ -1,9 +1,8 @@
 import React from 'react'
 
-function importAll(r) {
-    return r.keys().map(r);
-}
-const images = importAll(require.context('../public/images/carousel', false, /\.(png|jpe?g|svg)$/));
+const toImport = ["carousel1.jpg", "carousel2.jpg"]
+
+const images = toImport.map(x=>require('../public/images/' + x ))
 
 function countReducer (state, action) {
     switch (action.type) {
@@ -21,9 +20,9 @@ export default function Carousel() {
     return (
         <>
         <div className="carousel">
-            {images.map((x, i)=><>{count==i&&<div className="carousel-item"  key={x.default} style={{backgroundImage: `url("${x.default}")`}}>hey</div>}</>)}
-            <button className="carousel-left-button" onClick={()=>dispatch({type:'decrement'})}>left</button>
-            <button className="carousel-right-button" onClick={()=>dispatch({type:'increment'})}>right</button>
+            {images.map((x, i)=>count==i?<div className="carousel-item" key={x.default} style={{backgroundImage: `url("${x.default}")`}}></div>:null)}
+            <button className="carousel-left-button" onClick={()=>dispatch({type:'decrement'})} disabled={count===0}>left</button>
+            <button className="carousel-right-button" onClick={()=>dispatch({type:'increment'})} disabled={count===images.length-1}>right</button>
         </div>
         </>
     )
