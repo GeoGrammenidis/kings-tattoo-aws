@@ -20,9 +20,8 @@ export default function Carousel() {
     const [ count, dispatch ] = React.useReducer(countReducer, 0);
     return (
         <>
-        {count}
         <div className="carousel">
-            {images.map(x=><div className="carousel-item" key={x.default} style={{backgroundImage: `url("${x.default}")`}}>hey</div>)}
+            {images.map((x, i)=><>{count==i&&<div className="carousel-item"  key={x.default} style={{backgroundImage: `url("${x.default}")`}}>hey</div>}</>)}
             <button className="carousel-left-button" onClick={()=>dispatch({type:'decrement'})}>left</button>
             <button className="carousel-right-button" onClick={()=>dispatch({type:'increment'})}>right</button>
         </div>
