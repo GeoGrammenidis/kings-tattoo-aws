@@ -1,29 +1,31 @@
 import React from 'react'
-
-const toImport = ["carousel1.jpg", "carousel2.jpg"]
-
-const images = toImport.map(x=>require('../public/images/' + x ))
-
-function countReducer (state, action) {
-    switch (action.type) {
-        case 'increment':
-            return state!==images.length-1?state+1:state;
-        case 'decrement':
-            return state!==0?state-1:state;
-        default:
-            throw new Error("This action is not supported.")
-    }
-}
+import { BsShieldShaded } from 'react-icons/bs'
+import image1 from '../images/Kings-Tattoo-map.png'
 
 export default function Carousel() {
-    const [ count, dispatch ] = React.useReducer(countReducer, 0);
     return (
-        <>
         <div className="carousel">
-            {images.map((x, i)=>count==i?<div className="carousel-item" key={x.default} style={{backgroundImage: `url("${x.default}")`}}></div>:null)}
-            <button className="carousel-left-button" onClick={()=>dispatch({type:'decrement'})} disabled={count===0}>left</button>
-            <button className="carousel-right-button" onClick={()=>dispatch({type:'increment'})} disabled={count===images.length-1}>right</button>
+            <div class="test">
+                <div class="covid-header">
+                    <h1>Staying COVID-19 Secure in {(new Date().getFullYear())}</h1>
+                    <p>We confirm we have complied with the government's guidance on managing the risk of COVID-19</p>
+                </div>
+                <div class="covid-center">
+                    <div class="bullet-container">
+                        <span class="bullet">&#8226;</span>
+                        <h2>FIVE STEPS TO SAFER<br></br> WORKING TOGETHER</h2>
+                        <span class="bullet">&#8226;</span>
+                    </div>
+                </div>
+                <div class="covid-footer">
+                    <div class="shield-container">
+                        <span class="shield"><BsShieldShaded/></span>
+                        <p> We have carried out a <span><b>COVID-19 risk assessment</b></span> and shared the results with the people who work here </p>
+                        <span class="shield"><BsShieldShaded/></span>
+                    </div>
+                </div>
+            </div>
+           
         </div>
-        </>
     )
-}
+} 

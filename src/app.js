@@ -10,7 +10,6 @@ export default function App() {
     return (
         <BrowserRouter>
             <NavBar/>
-
             <React.Suspense fallback={<div>Loading</div>}>
                 <Switch>
                     <Route path='/' exact component={Home} />

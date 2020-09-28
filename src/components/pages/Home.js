@@ -1,31 +1,15 @@
 import React from 'react'
-import Carousel from '../Carousel'
-
+import ArticleComponent from '../ArticleComponent'
+import ParallaxComponent from '../ParallaxComponent'
+import Process from '../Process'
+import Services from '../Services'
 export default function Home() {
     return (
-        <div>
-            <div>
-                Paralax
-            </div>
-            <div>
-                Services
-            </div>
-            <Carousel/>
-            <div>
-                Proccesses
-            </div>
-            <div>
-                video
-            </div>
-            <div>
-                article
-            </div>
-            <div>
-                pre-footer menu
-            </div>
-            <div>
-                Footer
-            </div>
-        </div>
+        <>
+            <ParallaxComponent></ParallaxComponent>
+            <Services></Services>
+            <ArticleComponent></ArticleComponent>
+            <Process></Process>
+        </>
     )
 }
