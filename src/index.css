@@ -555,12 +555,21 @@ ul {
 .icon1-wrap:last-child {
     box-shadow: 0 0.5em 0 0.5em black;
 }
-.icon1-wrap:hover {
-    border: 2px solid white;
+
+@media(hover: hover) and (pointer: fine) {
+    .icon1-wrap:hover {
+        border: 2px solid white;
+    }
+    .icon1-wrap:hover .icon1{
+        color: white;
+        /* border: 2px solid white; */
+    }
+    
 }
-.icon1-wrap:hover .icon1{
-    color: white;
-    /* border: 2px solid white; */
+@media(hover: hover) and (pointer: fine) {
+    .icon1-wrap:hover {
+        border: 2px solid white;
+    }
 }
 
 .icon1-wrap.active{
