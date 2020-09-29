@@ -1,4 +1,8 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#app {
+    overflow: hidden;
+}
 body {
     margin: 0px;
     padding-top: 60px;
@@ -64,14 +68,14 @@ ul {
 }
 /* ~~~~~~~~~~~~ navbar menu ~~~~~~~~~~~~ */
 
-.drop-down {
+.navbar-drop-down {
     position: absolute;
     top: 60px;
     width: 100%;
     background-color: black;
     height: 0%;
 }
-.drop-down ul {
+.navbar-drop-down ul {
     max-height: 0%;
     overflow: hidden;
     padding-top: 0px;
@@ -88,33 +92,33 @@ ul {
     transition: max-height 0.5s ease-in-out 0s;
 }
 
-.drop-down li {
+.navbar-drop-down li {
     width: 100%;
     text-align: center;
 }
-.drop-down a{
+.navbar-drop-down a{
     padding: 12px;
     color: rgb(161, 161, 161);
     display: block;
     transition: color 0.4s;
     border-top: 1px solid gray;
 }
-.drop-down a:hover{
+.navbar-drop-down a:hover{
     color: white;
 }
-.drop-down a.selected{
+.navbar-drop-down a.selected{
     color: white;
 }
-.drop-down.open ul{
+.navbar-drop-down.open ul{
     max-height: 280px;
 }
 @media (min-width: 660px) {
-    .drop-down {
+    .navbar-drop-down {
         position: relative;
         top: 0px;
         height:100%;
     }
-    .drop-down ul{
+    .navbar-drop-down ul{
         padding-top: 0px;
         width: 430px;
         font-size: 20px;
@@ -122,11 +126,11 @@ ul {
         height: 100%;
         max-height: 100%;
     }
-    .drop-down a {
+    .navbar-drop-down a {
         border-top: 0px;
         padding: 0px;
     }
-    .drop-down.open ul{
+    .navbar-drop-down.open ul{
         max-height: 100%;
     }
     .navbar-menu {
@@ -207,6 +211,7 @@ ul {
     text-align: center;
     animation: left_to_right 0.7s ease-in;
 }
+
 @keyframes left_to_right {
     from {
         color:transparent;
@@ -447,14 +452,14 @@ ul {
     }
 }
 
-.tattoo-article {
+.tattoo-quotes {
     background-image: url("./images/carousel1.jpg");
     background-size: cover;
     background-position: top;
     height: 100vh;
     position: relative;
 }
-.tattoo-article-container {
+.tattoo-quotes-container {
     position: absolute;
     bottom: 0%;
     padding: 30px 0;
@@ -464,17 +469,17 @@ ul {
     background-color: transparent;
     background-image: radial-gradient(rgba(0, 0, 0, .8) 1%, rgba(41, 41, 41, 0.5) 98%);
 }
-.tattoo-article-container p{
+.tattoo-quotes-container p{
     padding: 0 40px;
 }
 @media (min-width: 600px) {
-    .tattoo-article-container p{
+    .tattoo-quotes-container p{
         font-size: 25px;
     }
 }
 
 .process-wrap {
-    padding: 25px;
+    margin: 25px;
     text-align: center;
 }
 .content-wrap {
@@ -549,6 +554,13 @@ ul {
     /* border: 2px solid white; */
 }
 
+.icon1-wrap.active{
+    border: 2px solid white;
+}
+
+.icon1-wrap.active .icon1{
+    color: white;
+}
 @media (min-width: 600px) {
     .content-wrap {
         flex-direction: row;
@@ -570,7 +582,6 @@ ul {
         box-shadow: 0.5em 0 0 0.5em black;
     }
 }
-
 
 /* @media (max-width: 600px) {
     .content-wrap {
@@ -614,10 +625,170 @@ ul {
         font-size: 42px;
     }
 }
-/* @media (min-width: 1200px) {
-    .icon1 {
-        width: 6rem;
-        height: 6rem;
+.drop-down-outer {
+    position: relative;
+}
+.drop-down-inner h2{
+    margin-top: 0px;
+}
+@media (max-width: 599px){
+    .drop-down-outer {
+        width: 100%;
+        margin-left: 90px;
+    }
+    .drop-down-inner {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        visibility:hidden;
+        transition: visibility 0s ease .5s;
+    }
+    .drop-down-inner.active {
+        visibility:visible;
+        transition: visibility 0s ease-in-out 1s;
+        animation: proccessAnimation1 .5s ease 1s;
+    }
+    .drop-down-bg {
+        height: 0px;
+        transition: height .5s ease .5s;
+    }
+    .drop-down-bg.active {
+        transition: height .5s ease .5s;
+    }
+    
+    .content-wrap {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .5s ease-in-out .4s;
+    }
+    .content-wrap.active {
+        left: -90px;
+        transform: translateX(0);
+        transition: all .5s ease-in-out 0s;
+    }
+    .whatever-wrap {
+        position: relative;
+        height: 772px;
+    }
+    
+    .lalala-whatever {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+@media (min-width: 600px) {    
+    .drop-down-inner {
+        position: absolute;
+        top: 0px;   
+        left: 0px;
+        padding: 10px;
+        visibility:hidden;
+        transition: visibility 0s ease-in-out .5s;
+    }
+    .drop-down-inner.active {
+        visibility:visible;
+        transition: visibility 0s ease-in-out .5s;
+        animation: proccessAnimation1 .5s ease .5s;
+    }
+    .drop-down-inner h2{
+        margin-top: 0px;
+    }
+    .drop-down-bg {
+        height: 0px;
+        transition: height .5s ease-in-out .5s;
+    }
+    .opening-animation2 {
+        transition: height .5s ease-in-out 0s;
     }
 }
- */
+.closing-animation,
+.changing-animation{
+    animation: proccessAnimation2 .5s ease 0s;
+}
+.changing-animation.active {
+    animation: proccessAnimation3 1.5s ease 0s;
+}
+@keyframes proccessAnimation1 {
+    0% {
+        color:transparent;
+        transform: translate(80%, 0%);
+    }
+}
+@keyframes proccessAnimation2 {
+    100% {
+        color:transparent;
+        transform: translate(80%, 0%);
+    }
+}
+@keyframes proccessAnimation3 {
+    0% {
+        color:transparent;
+        transform: translate(80%, 0%);
+    }
+    66% {
+        color:transparent;
+        transform: translate(80%, 0%);
+    }
+}
+
+.tattoo-article-wrap{
+    background-image: url("./images/tattoo-girl-image.jpg");
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    position: relative;
+    position: relative;
+    display: flex;
+}
+.tattoo-article-container {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 30px 0;
+    background-color:black;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    background-image: radial-gradient(rgba(0, 0, 0, .8) 1%, rgba(41, 41, 41, 0.5) 98%);
+}
+@media (min-width: 600px) {    
+    .tattoo-article-container p,
+    .tattoo-article-container h2{
+        font-size: 19px;
+        padding: 0 100px;
+    }
+    .tattoo-article-container h2{
+        font-size: 32px;
+    }
+}
+
+
+
+.footer h2, ul, p {
+    text-align: center;
+}
+.footer li {
+    padding: 4px 0px;
+    color: rgb(161, 161, 161);
+}
+.footer p {
+    margin-bottom: 5px;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer a {
+    color: rgb(161, 161, 161);
+}
+.footer a:visited {
+    color: rgb(161, 161, 161);
+}
+.footer a:hover {
+    color: white;
+}

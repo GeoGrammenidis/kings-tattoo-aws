@@ -16,7 +16,7 @@ export default function NavBar() {
                         <h2>Kings <br></br>Tattoo</h2>
                     </div>
                 </NavLink>
-                <div className={active?"drop-down open":"drop-down"}>
+                <div className={active?"navbar-drop-down open":"navbar-drop-down"}>
                     <ul>
                         <li><NavLink to="/" exact activeClassName="selected">Home</NavLink></li>
                         <li><NavLink to="/gallery" activeClassName="selected">Gallery</NavLink></li>
@@ -33,9 +33,7 @@ export default function NavBar() {
                         <span>&nbsp;</span>
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }

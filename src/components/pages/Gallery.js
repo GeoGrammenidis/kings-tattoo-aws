@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Gallery() {
     return (
-        <div>
-            Gallery works
+        <div style={{textAlign:"center"}}>
+            Gallery is under construction.
         </div>
     )
 }
