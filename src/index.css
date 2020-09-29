@@ -113,6 +113,9 @@ ul {
     max-height: 280px;
 }
 @media (min-width: 660px) {
+    .navbar-drop-down li {
+           width: auto;
+    }
     .navbar-drop-down {
         position: relative;
         top: 0px;
@@ -266,6 +269,12 @@ ul {
     position: relative;
     margin-bottom: 40px;
     cursor: pointer;
+}
+.services-image-container a,
+.services-image-container a:hover,
+.services-image-container a:visited {
+    color: white;
+    text-decoration: none;
 }
 .services-image-container img{
     transition: all 0.2s ease-in-out;

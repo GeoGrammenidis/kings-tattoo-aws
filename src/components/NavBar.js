@@ -18,11 +18,11 @@ export default function NavBar() {
                 </NavLink>
                 <div className={active?"navbar-drop-down open":"navbar-drop-down"}>
                     <ul>
-                        <li><NavLink to="/" exact activeClassName="selected">Home</NavLink></li>
-                        <li><NavLink to="/gallery" activeClassName="selected">Gallery</NavLink></li>
-                        <li><NavLink to="/hygiene" activeClassName="selected">Hygiene</NavLink></li>
-                        <li><NavLink to="/staff" activeClassName="selected">Staff</NavLink></li>
-                        <li><NavLink to="/about-us" activeClassName="selected">About Us</NavLink></li>
+                        <li><NavLink to="/" exact activeClassName="selected" onClick={()=>onClick()}>Home</NavLink></li>
+                        <li><NavLink to="/gallery" activeClassName="selected" onClick={()=>onClick()}>Gallery</NavLink></li>
+                        <li><NavLink to="/hygiene" activeClassName="selected" onClick={()=>onClick()}>Hygiene</NavLink></li>
+                        <li><NavLink to="/staff" activeClassName="selected" onClick={()=>onClick()}>Staff</NavLink></li>
+                        <li><NavLink to="/about-us" activeClassName="selected" onClick={()=>onClick()}>About Us</NavLink></li>
                     </ul>
                 </div>
                 <div className="burger-container">
